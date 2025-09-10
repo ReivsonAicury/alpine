@@ -12,8 +12,9 @@ RUN apk update && apk add --no-cache \
     tcpdump \
     nmap \
     ncurses \
-    netcat-openbsd
+    netcat-openbsd \
+    apache2
 
-CMD ["/bin/sh"]
+EXPOSE 80
 
-
+CMD ["httpd", "-f", "-p", "80"]
